@@ -1,0 +1,137 @@
+* {
+  margin:0;
+  padding: 0;
+  font-family: system-ui, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+}
+
+@keyframes reveal {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.cover {
+  position: fixed;
+  inset: 0;
+  background-color: #080808;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  pointer-events: none;
+  z-index: 9999;
+  animation: reveal 1.5s ease-in .7s forwards;
+}
+
+.cover > .portrait {
+  display: none;
+}
+
+@media only screen and (orientation: portrait) {
+
+  .cover {
+    animation: none;
+  }
+  .cover .loading {
+    display: none;
+  }
+  .cover .portrait {
+    display: block;
+  }
+}
+
+header {
+  position: fixed;
+  top: 3%;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap:2rem;
+  z-index: 2;
+}
+
+.header-text {
+  margin-right: 3rem;
+  font-size: 1.2rem;
+}
+
+header img {
+  width: 60px;
+  aspect-ratio: 1;
+}
+
+main {
+height: 100vh;
+display: grid;
+place-content: center;
+/* position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); */
+text-align: center;
+}
+
+.title, .header-text {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 6vw;
+  letter-spacing: .5px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #535353;
+  margin: 1%;
+}
+
+.catalog {
+  padding: 20px;
+  font-size: 1.6rem;
+  border-radius: 40px;
+  border: none;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.35);
+  margin-top: 3rem;
+  transition: background-color 500ms;
+  cursor: pointer;
+}
+
+.catalog:hover {
+  box-sizing: border-box;
+  background-color: #2e2e2e;
+  color: white;
+}
+
+.catalog:active {
+  box-shadow: none;
+  transform: translate(4px, 6px);
+}
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-200%)}
+}
+
+.slide-track {
+  animation: scroll 30s linear infinite;
+  display: flex;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 30%;
+}
+
+.slide-track > * {
+  width: 100vw;
+  object-fit: cover;
+  flex-shrink: 0;
+}
