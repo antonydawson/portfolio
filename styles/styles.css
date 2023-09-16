@@ -1,0 +1,135 @@
+html {
+  margin: 0;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+  --bg-size: 10vmin;
+
+
+  --text-color: rgb(202, 202, 202);
+  /* --text-color: rgb(202, 202, 202); */
+
+  
+  --dots-color: rgba(255, 255, 255, 0.1);
+
+
+  --bg-color: rgb(29, 29, 29);
+  /* --bg-color: rgb(138, 138, 138); */
+
+
+  --cards-color: rgb(75, 75, 75);
+  --card-gradient: rgb(153, 186, 248);
+  color: var(--text-color);
+
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: radial-gradient(
+    var(--dots-color) 9%,
+    transparent 9%);
+  background-position: 0% 0%;
+  background-size: var(--bg-size) var(--bg-size);
+  position: relative;
+
+}
+
+.back {
+  position: fixed;
+  left: 3rem;
+  width:30px;
+  aspect-ratio: 1;
+}
+
+/* .background {
+  background-color: var(--bg-color);
+  background-image: radial-gradient(
+    var(--dots-color) 9%,
+    transparent 9%);
+  background-position: 0% 0%;
+  background-size: var(--bg-size) var(--bg-size);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transition: 80ms ease;
+} */
+
+.title, .subtitle, .card-wrapper {
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+.title {
+  margin-top: 2rem;
+  margin-bottom:1rem;
+  font-size:3.125rem;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  word-spacing: 15px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 50%;
+}
+
+.card-wrapper {
+  padding:5rem;
+  padding-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card img {
+  width:70%;
+  padding-bottom: 2rem;
+}
+
+.links {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.card {
+  background-image: radial-gradient(
+    var(--card-gradient), rgb(197, 197, 197)
+  );
+  width: 200px;
+  margin: auto;
+  margin-bottom: 2rem;
+  aspect-ratio: 1/1.5;
+  background-color: var(--cards-color);
+  border-radius: 31px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  color: var(--cards-color);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 200ms ease;
+  position: relative;
+}
+
+.card:hover {
+  background-image: radial-gradient(
+    var(--card-gradient), rgb(109, 109, 109)
+  );
+  width: 205px;
+  color: white;
+}
+
+.card:hover ~ body {
+  opacity: 50%;
+}
+
+.credits {
+  position: absolute;
+  bottom: 10px; right:10px;
+  color:white;
+}
