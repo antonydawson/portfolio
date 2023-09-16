@@ -1,0 +1,222 @@
+.greeting {
+  padding-top:auto;
+  padding-bottom: auto;
+  height:100vh;
+  height:100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: -100;
+}
+.greeting h1, .greeting h2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 5rem;
+  padding:0 4rem;
+  color:rgb(255, 255, 255);
+  text-shadow: 4px 4px 3px rgba(0,0,0,.2);
+  text-decoration: underline 10px aqua;
+  position: relative;
+}
+.greeting h2 {
+  font-size: 3rem;
+}
+.greeting h1::after, .greeting h2::after {
+  content:"";
+  height: 20px;
+  width:30px;
+  background-color: rgb(53, 53, 53);
+  position: absolute;
+  bottom:15px;
+  transform: rotate(-45deg) translate(-1.5rem, 0);
+}
+.greeting h2::after {
+  transform: rotate(-45deg) translate(-1.5rem, 10px);
+}
+
+.arrows {
+  display:flex;
+  width: 100%;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
+
+.content {
+  margin-top: 2em;
+  padding-bottom: 3em;
+  position:relative;
+  isolation:isolate;
+}
+.content::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  transform:skewY(-2deg);
+  background: linear-gradient( rgb(53, 53, 53), rgb(53, 53, 81), rgb(53, 53, 53));
+
+}
+
+ .content h2 {
+  width:8em;
+
+/* CHANGE LATER */
+
+  text-decoration: underline 4px white;
+  background:linear-gradient( rgb(255, 255, 255), hsl(240, 21%, 50%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 1rem;
+  padding-top: 4rem;
+  font-size: 50px;
+  font-style: italic;
+}
+
+.proj-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap:40px;
+}
+
+@media (max-width: 700px) {
+  .proj-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1000px) {
+  .proj-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+.card-blank {
+  width:1fr;
+  /* border:3px dashed;
+  border-radius:10px; */
+  margin:20px;
+  background-color: rgba(255, 255, 255, .2);
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='white' stroke-width='5' stroke-dasharray='30 30' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 10px;
+    display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.card {
+  width:1fr;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 7px 7px 5px rgba(0,0,0,.3);
+  cursor: pointer;
+  background: rgb(194, 194, 194);
+  color:rgb(39, 39, 39);
+  position: relative;
+}
+.card-cover {
+  text-decoration: none;
+  font-size:30px;
+  color:aqua;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  top:0; bottom:0; right:0; left:0;
+  background-color: rgb(78, 78, 78);
+  border-radius:10px;
+  opacity:0;
+  transition: .2s;
+}
+
+.card-cover:hover {
+  opacity: .7;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  border-bottom: 2px solid aqua;
+}
+
+.card video, .card img {
+  width:100%;
+  border-radius: 10px;
+  pointer-events: none;
+}
+.card img {  aspect-ratio: 3/2.2;}
+
+.about-me {
+  padding: 20px;
+  padding-top: 80px;
+  color:white;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+.general-info {
+  border-right: 1px solid white;
+  padding-right: 1em;
+}
+.extracurriculars {
+  margin-left: 2em;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+b {
+  font-size:2rem;
+  padding-bottom:.2em;
+  font-style: italic;
+  text-decoration: 2px underline;
+  color:white;
+  display: block;
+}
+.inputs-section {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.mail-input {
+  background-color: gray;
+  height:2em;
+  border:none;
+  border-radius: 7px;
+  color:white;
+  font-size: 1rem;
+  resize: none;
+  width: 100%;
+  padding:none;
+  margin-bottom: 15px;
+  outline:none;
+}
+.mail-input::placeholder {
+  color: rgb(236, 235, 235);
+  font-weight: 700;
+}
+.message {
+  height:10em;
+}
+.send {
+  background: blue;
+  width: 5rem;
+}
+footer {
+  padding: 10px;
+}
+
+
+.overlay {
+  /* position: fixed;
+  top:3em; bottom: 0; right: 0; left: 0; */
+  background-color: white;
+}
+
+.overlay[data-visible="true"] {
+  transform: translateX(50%);
+}

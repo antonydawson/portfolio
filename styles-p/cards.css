@@ -1,0 +1,64 @@
+.card-info {
+  top:3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color:white;
+  padding-inline: 10rem;
+  padding-bottom: 5rem;
+  background: #484848;;
+  animation: thing 3s ease;
+}
+
+@keyframes thing {
+  0% {
+    clip-path: inset(0 0 100vh 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.content-title {
+  font-size: 3em;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: underline 5px solid;
+}
+.images-container {
+  display: flex;
+  gap:10px;
+  padding-inline: 3em;
+}
+.card-info video {
+  border-radius: 10px;
+  height:20em;
+  margin-bottom: 4em;
+}
+.card-info img {
+  width:100%;
+  border: 10px solid black;
+  border-radius: 0;
+}
+
+.content-img {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:1em;
+  padding: 1em;
+}
+.content-img > img {
+  width:100%;
+  border-radius: 0;
+  border: 5px solid black;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / .5);
+  cursor: pointer;
+}
+
+.prev, .next {
+  position: fixed; top: 3.5em;
+}
+.prev {left:.5em;}
+.next {right:.5em; transform: rotate(180deg);}

@@ -1,0 +1,19 @@
+html {
+  scroll-behavior:smooth;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin:0;
+  color:#000000;
+  background-color: #353535;
+    padding-top:3rem;
+}
+img {
+  border-radius: 10px;
+}
+h1,h2,h3 {
+  margin:0;
+}
+li {
+  margin:16px;
+}
