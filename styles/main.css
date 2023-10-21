@@ -27,7 +27,7 @@
   font-size: 1.5rem;
   pointer-events: none;
   z-index: 9999;
-  animation: reveal 1.5s ease-in 1s forwards;
+  animation: reveal 1.5s ease-in 2.5s forwards;
 }
 
 .cover > .portrait {
